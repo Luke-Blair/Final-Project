@@ -1,4 +1,10 @@
+import Layouts.BookInfo;
+import Layouts.BookList;
+import Layouts.ParentLayout;
+import Layouts.ProjectFrame;
+
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
@@ -33,90 +39,53 @@ public class Gui {
      * parts required to construct the visual graphics of our project.
      */
     public void build(){
-        JFrame frame = new JFrame("Book-Byte");
-        Container content = frame.getContentPane();
+        JFrame frame = new ProjectFrame("Book-Byte");
 
+        //Panel used to hold all other pannels
+        JPanel parentPanel = new ParentLayout();
 
+        //Panel used to display selectedBook's info
+        JPanel infoPanel = new BookInfo();
 
-        //Set operation on close
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Panel used to hold all selectable books
+         JPanel bookPanel = new BookList();
 
-        JPanel parentPanel = new JPanel();
-        parentPanelLayoutConfigs(parentPanel);
-
-        //Pane used to display selectedBook's info
-        JPanel infoPanel = new JPanel();
-        infoPanelLayoutConfigs(infoPanel);
-        packSampleLabels(infoPanel);
-
-        //Pane used to hold all selectable books
-        JPanel bookPanel = new JPanel();
-        bookPanelLayoutConfigs(bookPanel);
 
         //Buttons representing books in bookPane
+        //Labels representing book info
         // TODO remove from final code
         packSampleButtons(bookPanel);
+        packSampleLabels(infoPanel);
 
+        //adding child panel to parent panel
         parentPanel.add(infoPanel);
         parentPanel.add(bookPanel);
 
         frame.add(parentPanel);
 
-
         frame.pack();
+        frame.setSize(900, 700);
         frame.setVisible(true);
 
 
     }
 
-    /**
-     * This Method sets a JPanel assigned as bookPane to the proper configurations
-     * @param parentPane
-     */
-    private void parentPanelLayoutConfigs(JPanel parentPane){
-        int columns = 1;
-        int rows = 4;
-        GridLayout layout = new GridLayout();
-        layout.setColumns(columns);
-        layout.setRows(rows);
-        parentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
-        parentPane.setLayout(layout);
-    }
-
-    /**
-     * This Method sets a JPanel assigned as bookPane to the proper configurations
-     * @param bookPane
-     */
-    private void bookPanelLayoutConfigs(JPanel bookPane){
-        int columns = 1;
-        int rows = RESULTS_PER_PAGE;
-        GridLayout layout = new GridLayout();
-        layout.setColumns(columns);
-        layout.setRows(rows);
-        bookPane.setLayout(layout);
-    }
-
-
-    /**
-     * This Method sets a JPanel assigned as bookPane to the proper configurations
-     * @param infoPane
-     */
-    private void infoPanelLayoutConfigs(JPanel infoPane){
-        int columns = 2;
-        int rows = 2;
-        Color backgroundColor = new Color(167, 168, 168);
-        GridLayout layout = new GridLayout();
-        infoPane.setBackground(backgroundColor);
-        layout.setColumns(columns);
-        layout.setRows(rows);
-        infoPane.setLayout(layout);
-    }
 
     // TODO remove all refrences to this method in final code
     private void packSampleButtons(JPanel pane){
         for(int i = 0; i < RESULTS_PER_PAGE; i++ ){
-            pane.add(new JButton((i + 1) + "# Sample Button"));
+            JButton button = new JButton((i + 1) + "# Sample Button");
+            button.setMinimumSize(new Dimension(10, 10));
+            pane.add(button);
         }
+        JPanel fbPanel = new JPanel();
+        GridLayout fbLayout = new GridLayout();
+        fbLayout.setColumns(1);
+        fbPanel.setLayout(fbLayout);
+        fbPanel.add(new JButton("<|pg:n"));
+        fbPanel.add(new JButton("pg:m|>"));
+        pane.add(fbPanel);
+
     }
 
     // TODO remove all refrences to this method in final code
