@@ -8,5 +8,6 @@ public class ProjectFrame extends JFrame {
     public ProjectFrame(String s){
         super(s);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
     }
 }
