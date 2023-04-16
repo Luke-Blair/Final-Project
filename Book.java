@@ -1,3 +1,4 @@
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Book {
@@ -50,5 +51,12 @@ public class Book {
         this.rating = Integer.parseInt(in.nextLine());
         this.genre = Genre.valueOf(in.nextLine());
         this.author = in.nextLine();
+    }
+
+    public void save(PrintWriter out) {
+        out.println(name);
+        out.println(rating);
+        out.println(genre);
+        out.println(author);
     }
 }//end of book class
