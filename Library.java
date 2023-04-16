@@ -33,15 +33,8 @@ public class Library {
         }
     }
 
-    public void reviewBook(String title, String author, String genre, int rating) {
-        Book b = new Book.Builder(title)
-        .author(author)
-        .genre(genre)
-        .rating(rating)
-        .build();
-
+    public void addBook(Book b) {
         books.add(b);
-        saveToFile();
     }
 
     public void saveToFile() {
