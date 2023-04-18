@@ -51,4 +51,8 @@ public class Library {
             e.printStackTrace();
         }
     }
+
+    public ArrayList<Book> getList() {
+        return books;
+    }
 }

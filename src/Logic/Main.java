@@ -5,6 +5,8 @@ import Logic.Gui;
 public class Main {
     public static void main(String[] args){
 
+        Library library = Library.instance();
+        library.readFile("Books");
         //Creates Singleton Logic.Gui
         Gui gui = Gui.instance();
         //Constructs JFrame, then packs with JObjects
