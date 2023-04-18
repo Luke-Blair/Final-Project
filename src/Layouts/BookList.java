@@ -21,8 +21,13 @@ public class BookList extends JPanel {
     }
 
     private void packSampleButtons(){
+        Library lib = Library.instance();
         for(int i = 0; i < 7; i++ ){
-            JButton button = new JButton((i + 1) + "# Sample Button");
+            Book book = lib.getList().get(i);
+            String author = book.getAuthor();
+            String title = book.getName();
+            String buttonString = String.format("%s15 + %s15", title, author);
+            JButton button = new JButton(buttonString);
             button.setPreferredSize(new Dimension(5,50));
             add(button);
         }
