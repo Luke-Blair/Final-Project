@@ -15,5 +15,13 @@ public class BookInfo extends JPanel {
         layout.setColumns(columns);
         layout.setRows(rows);
         setLayout(layout);
+        sampleText();
+    }
+
+    private void sampleText(){
+        add(new JLabel("Name:"));
+        add(new JLabel("Author:"));
+        add(new JLabel("Genre:"));
+        add(new JLabel("Last Read"));
     }
 }

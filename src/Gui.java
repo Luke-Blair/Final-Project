@@ -50,13 +50,6 @@ public class Gui {
          //Panel used to hold foward back button for pages
         JPanel fbPannel = new PgFowardBack();
 
-
-        //Buttons representing books in bookPane
-        //Labels representing book info
-        // TODO remove from final code
-        packSampleButtons(bookPanel);
-
-
         //adding child panel to parent panel
         parentPanel.add(infoPanel);
         parentPanel.add(bookPanel);
@@ -72,16 +65,7 @@ public class Gui {
     }
 
 
-    // TODO remove all refrences to this method in final code
-    private void packSampleButtons(JPanel pane){
-        for(int i = 0; i < RESULTS_PER_PAGE; i++ ){
-            JButton button = new JButton((i + 1) + "# Sample Button");
-            button.setAlignmentX(Component.CENTER_ALIGNMENT);
-            button.setPreferredSize(new Dimension(5,50));
-            pane.add(button);
-        }
 
-    }
 
 
 

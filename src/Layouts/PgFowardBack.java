@@ -8,7 +8,14 @@ public class PgFowardBack extends JPanel {
         GridLayout fbLayout = new GridLayout();
         fbLayout.setColumns(1);
         setLayout(fbLayout);
-        add(new JButton("<|pg:n"));
-        add(new JButton("pg:m|>"));;
+        JButton back = new JButton("<|pg:n");
+        JButton foward = new JButton("pg:m|>");
+        add(back);
+        add(foward);;
+    }
+
+    @Override
+    public Dimension getSize() {
+        return new Dimension(60,10);
     }
 }
