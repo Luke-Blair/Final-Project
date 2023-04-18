@@ -59,4 +59,36 @@ public class Book {
         out.println(genre);
         out.println(author);
     }
+
+    /**
+     * Gets name of book
+     * @return name of book
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Gets author of book
+     * @return author of book
+     */
+    public String getAuthor() {
+        return author;
+    }
+
+    /**
+     * Gets rating of book
+     * @return rating of book
+     */
+    public int getRating() {
+        return rating;
+    }
+
+    /**
+     * Gets genre of book
+     * @return genre of book
+     */
+    public Genre getGenre() {
+        return genre;
+    }
 }//end of book class

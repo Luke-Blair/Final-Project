@@ -1,12 +1,15 @@
 public class Main {
     public static void main(String[] args){
 
+        //Reads the file and saves it as the Library
+        Library library = Library.instance();
+        library.readFile("Books");
+
         //Creates Singleton Gui
         Gui gui = Gui.instance();
         //Constructs JFrame, then packs with JObjects
         gui.build();
 
-        //need to set up GUI
         //maybe 5 buttons at a time with their own book objects
         //next page, back page, and current page components
         //big label displaying book button that was clicked on
