@@ -53,6 +53,7 @@ public class Book {
         this.rating = Integer.parseInt(in.nextLine());
         this.genre = Genre.valueOf(in.nextLine());
         this.author = in.nextLine();
+        in.nextLine();
     }
 
     public void save(PrintWriter out) {
@@ -60,6 +61,7 @@ public class Book {
         out.println(rating);
         out.println(genre);
         out.println(author);
+        out.println("");
     }
 
     /**
