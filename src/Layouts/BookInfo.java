@@ -21,7 +21,7 @@ public class BookInfo extends JPanel {
     private void sampleText(){
         add(new JLabel("Name:"));
         add(new JLabel("Author:"));
-        add(new JLabel("Genre:"));
+        add(new JLabel("Logic.Genre:"));
         add(new JLabel("Last Read"));
     }
 }

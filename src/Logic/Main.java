@@ -1,7 +1,11 @@
+package Logic;
+
+import Logic.Gui;
+
 public class Main {
     public static void main(String[] args){
 
-        //Creates Singleton Gui
+        //Creates Singleton Logic.Gui
         Gui gui = Gui.instance();
         //Constructs JFrame, then packs with JObjects
         gui.build();

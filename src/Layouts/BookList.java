@@ -3,6 +3,10 @@ package Layouts;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import Logic.*;
+
+
+
 
 public class BookList extends JPanel {
     public BookList(){

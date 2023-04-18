@@ -1,8 +1,8 @@
+package Logic;
+
 import Layouts.*;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class Gui {
@@ -10,9 +10,9 @@ public class Gui {
     private static Gui theInstance;
     final int RESULTS_PER_PAGE = 10;
 
-    /**Singleton pattern for Gui object
+    /**Singleton pattern for Logic.Gui object
      *
-     * @return theInstance an instance of the Gui object
+     * @return theInstance an instance of the Logic.Gui object
      */
     public static synchronized Gui instance(){
         if (theInstance == null){
@@ -22,9 +22,9 @@ public class Gui {
     }
 
     /**
-     * Default constructor for the Gui object
+     * Default constructor for the Logic.Gui object
      *
-     * @returns Gui a Gui object
+     * @returns Logic.Gui a Logic.Gui object
      */
     private Gui(){
 
@@ -32,11 +32,11 @@ public class Gui {
     }
 
     /**
-     * Constructs a JFrame object inside of the Gui, the method then loads the
+     * Constructs a JFrame object inside of the Logic.Gui, the method then loads the
      * parts required to construct the visual graphics of our project.
      */
     public void build(){
-        JFrame frame = new ProjectFrame("Book-Byte");
+        JFrame frame = new ProjectFrame("Logic.Book-Byte");
 
         //Panel used to hold all other pannels
         JPanel parentPanel = new ParentLayout();
@@ -51,9 +51,9 @@ public class Gui {
         JPanel fbPannel = new PgFowardBack();
 
         //adding child panel to parent panel
-        parentPanel.add(infoPanel);
-        parentPanel.add(bookPanel);
-        parentPanel.add(fbPannel);
+        parentPanel.add(infoPanel, BorderLayout.PAGE_START);
+        parentPanel.add(bookPanel, BorderLayout.CENTER);
+        parentPanel.add(fbPannel, BorderLayout.PAGE_END);
 
 
         frame.add(parentPanel);
