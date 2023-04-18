@@ -49,11 +49,17 @@ public class Book {
      * @param in the scanner to read the file
      */
     public Book(Scanner in) {
+        int i = 0;
+        System.out.println(i);
+        i++;
         this.name = in.nextLine();
         this.rating = Integer.parseInt(in.nextLine());
         this.genre = Genre.valueOf(in.nextLine());
         this.author = in.nextLine();
-        in.nextLine();
+        if(in.hasNextLine()){
+            in.nextLine();
+        }
+
     }
 
     public void save(PrintWriter out) {

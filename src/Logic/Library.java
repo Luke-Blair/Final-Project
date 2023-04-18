@@ -23,15 +23,16 @@ public class Library {
 
     public void readFile(String fileName) {
         this.fileName = fileName;
-        File f = new File("files", fileName);
+        File f = new File(fileName);
         try {
+            System.out.println(f.getName());
             Scanner in = new Scanner(f);
             while(in.hasNextLine()) {
                 books.add(new Book(in));
             }
         } catch (FileNotFoundException e) {
             System.out.println("File Not Found");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 

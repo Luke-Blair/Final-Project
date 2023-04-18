@@ -6,11 +6,17 @@ public class Main {
     public static void main(String[] args){
 
         Library library = Library.instance();
-        library.readFile("Books");
-        //Creates Singleton Logic.Gui
-        Gui gui = Gui.instance();
-        //Constructs JFrame, then packs with JObjects
-        gui.build();
+        try{
+            library.readFile("src/Books.txt");
+            //Creates Singleton Logic.Gui
+            Gui gui = Gui.instance();
+            //Constructs JFrame, then packs with JObjects
+            gui.build();
+        }catch(Exception e){
+            System.out.println("Build Failed");
+            e.printStackTrace();
+        }
+
 
         //need to set up GUI
         //maybe 5 buttons at a time with their own book objects
