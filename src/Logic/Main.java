@@ -2,10 +2,23 @@ package Logic;
 
 import Logic.Gui;
 
+import javax.swing.*;
+import javax.swing.plaf.metal.MetalLookAndFeel;
+
 public class Main {
     public static void main(String[] args){
 
         Library library = Library.instance();
+
+        try {
+
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        }
+        catch (Exception e) {
+            System.out.println("Look and Feel not set");
+        }
+
+
         try{
             library.readFile("src/Books.txt");
             //Creates Singleton Logic.Gui

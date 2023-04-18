@@ -52,8 +52,8 @@ public class Gui {
 
         //adding child panel to parent panel
         parentPanel.add(infoPanel, BorderLayout.PAGE_START);
+        bookPanel.add(fbPannel);
         parentPanel.add(bookPanel, BorderLayout.CENTER);
-        parentPanel.add(fbPannel, BorderLayout.PAGE_END);
 
 
         frame.add(parentPanel);
