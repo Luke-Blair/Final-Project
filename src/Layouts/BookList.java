@@ -21,12 +21,11 @@ public class BookList extends JPanel {
     }
 
     private void packSampleButtons(){
-        for(int i = 0; i < 7; i++ ){
+        for(int i = 0; i < 7; i++){
             JButton button = new JButton((i + 1) + "# Sample Button");
             button.setPreferredSize(new Dimension(5,50));
             add(button);
         }
-
     }
 }
 
