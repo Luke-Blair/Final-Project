@@ -19,6 +19,14 @@ public class BookList extends JPanel {
     private int last;
     private HashMap<ButtonListener, JButton> buttonMap;
     private ArrayList<JButton> buttons;
+
+    /**
+     * Constructor for a BookList that dispalys book info from a specified start and end point
+     * in the arraylist of books
+     * @param info the panel that reads the book information
+     * @param start the first specified index of the arraylist
+     * @param last the last specified index of the arraylist
+     */
     public BookList(BookInfo info, int start, int last){
 
         buttonMap = new HashMap<>();
@@ -38,6 +46,9 @@ public class BookList extends JPanel {
         updateButtons(0, 7);
     }
 
+    /**
+     * Creates 7 blank buttons
+     */
     private void packSampleButtons(){
         Library lib = Library.instance();
         for(int i = 0; i < 7; i++ ){
@@ -53,6 +64,12 @@ public class BookList extends JPanel {
 
     }
 
+    /**
+     * Updates the buttons display information to the specified start and end of the
+     * arraylist of books
+     * @param start the specified start index of the arraylist
+     * @param last the specified end index of the arraylist
+     */
     public void updateButtons(int start, int last) {
         Library lib = Library.instance();
         if(last > lib.getList().size()) {
@@ -100,10 +117,18 @@ public class BookList extends JPanel {
         }
     }
 
+    /**
+     * Returns the start index value
+     * @return the start index value
+     */
     public int getStart() {
         return start;
     }
 
+    /**
+     * Returns the end index value
+     * @return the end index value
+     */
     public int getLast() {
         return last;
     }

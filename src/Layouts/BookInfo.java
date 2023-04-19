@@ -10,11 +10,19 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
+/**
+ * BookInfo class which contains the panels of book information when a book is clicked on
+ */
 public class BookInfo extends JPanel {
     private JLabel name;
     private JLabel author;
     private JLabel genre;
     private JLabel rating;
+
+    /**
+     * Constructor for BookInfo, sets the layout and calls methods to include the first 7 books
+     * onto the buttons
+     */
     public BookInfo(){
         int columns = 2;
         int rows = 2;
@@ -29,6 +37,9 @@ public class BookInfo extends JPanel {
         sampleText();
     }
 
+    /**
+     * Creates empty panel for book information (useful on very start of program)
+     */
     private void sampleText(){
         SelectedBook selectedBook = SelectedBook.instance();
         Book book = selectedBook.getBook();
@@ -50,6 +61,10 @@ public class BookInfo extends JPanel {
         add(rating);
     }
 
+    /**
+     * Updates information for the current book that was clicked on
+     * @param book the book button that was clicked on
+     */
     public void setLabels(SelectedBook book) {
         Book b = book.getBook();
         name.setText("Name: " + b.getName());

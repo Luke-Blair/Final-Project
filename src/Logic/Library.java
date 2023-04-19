@@ -11,10 +11,20 @@ public class Library {
     private static Library theInstance;
     private String fileName;
     private ArrayList<Book> books;
+
+    /**
+     * Private constructor for Library that sets the fileName to nothing and
+     * establishes the arraylist
+     */
     private Library(){
         fileName = "";
         books = new ArrayList<>();
     }
+
+    /**
+     * Singleton case for the Library
+     * @return the single Library class
+     */
     public static synchronized Library instance(){
         if(theInstance == null){
             theInstance = new Library();
@@ -22,6 +32,10 @@ public class Library {
         return theInstance;
     }
 
+    /**
+     * Takes in a file name and reads it, creating the arraylist of books
+     * @param fileName the file to be read
+     */
     public void readFile(String fileName) {
         this.fileName = fileName;
         File f = new File(fileName);
@@ -37,10 +51,17 @@ public class Library {
         }
     }
 
+    /**
+     * Adds the specified book to the arraylist
+     * @param b the book to be added
+     */
     public void addBook(Book b) {
         books.add(b);
     }
 
+    /**
+     * Writes to the file the books in the arraylist
+     */
     public void saveToFile() {
         File f = new File("users/" + fileName);
         try {
@@ -54,10 +75,18 @@ public class Library {
         }
     }
 
+    /**
+     * Returns the arraylist of books
+     * @return the arraylist of books
+     */
     public ArrayList<Book> getList() {
         return books;
     }
 
+    /**
+     * Sorts the arraylist by genre and then updates the file
+     * @param genre the specified genre to sort by
+     */
     public void sortByGenre(Genre genre) {
         ArrayList<Book> newBooks = new ArrayList<>();
 
@@ -75,8 +104,12 @@ public class Library {
             books.remove(b);
         }
         books = newBooks;
+        saveToFile();
     }
 
+    /**
+     * Sorts the arraylist by rating and then updates the file
+     */
     public void sortByRating() {
         for(int i = 0; i < books.size() - 1; i++) {
             for(int j = 0; j < books.size() - 1 - i; j++) {
@@ -89,5 +122,6 @@ public class Library {
                 }
             }
         }
+        saveToFile();
     }
 }
