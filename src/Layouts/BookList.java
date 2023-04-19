@@ -11,7 +11,7 @@ import Logic.*;
 
 
 public class BookList extends JPanel {
-    public BookList(){
+    public BookList(JPanel bookInfo){
 
         GridLayout layout = new GridLayout(0, 1);
         setBorder(new LineBorder(new Color(0x636372), 5));
@@ -34,6 +34,7 @@ public class BookList extends JPanel {
                 String buttonString = String.format("Title: %-100s Author: %-100s", title, author);
                 JButton button = new JButton(buttonString);
                 button.setPreferredSize(new Dimension(5, 50));
+                button.addActionListener(new ButtonListener(title, author, String.valueOf(book.getGenre()), String.valueOf(book.getRating())));
                 add(button);
             }catch(Exception e){
                 add(new JButton());

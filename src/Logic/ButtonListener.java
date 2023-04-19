@@ -7,18 +7,20 @@ public class ButtonListener implements ActionListener{
     private String name;
     private String author;
     private String genre;
-    private LocalDate last;
-    public ButtonListener(JLabel label, String name, String author, String genre, String last){
+    private String rating;
+    public ButtonListener(String name, String author, String genre, String rating){
         this.name = name;
         this.author = author;
         this.genre = genre;
-        this.last = LocalDate.parse(last);
+        this.rating = rating;
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        new JLabel(name);
-        new JLabel(author);
-        new JLabel(genre);
-        new JLabel(last.toString());
+        SelectedBook selectedBook = SelectedBook.instance();
+        selectedBook.setBook(new Book.Builder(name)
+                .author(author)
+                .genre(genre)
+                .rating(Integer.parseInt(rating))
+                .build());
     }
 }

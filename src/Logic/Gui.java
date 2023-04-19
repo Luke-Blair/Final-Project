@@ -42,10 +42,10 @@ public class Gui {
         JPanel parentPanel = new ParentLayout();
 
         //Panel used to display selectedBook's info
-        JPanel infoPanel = new BookInfo();
+        JPanel infoPanel = new BookInfo(null);
 
         //Panel used to hold all selectable books
-         JPanel bookPanel = new BookList();
+         JPanel bookPanel = new BookList(infoPanel);
 
          //Panel used to hold foward back button for pages
         JPanel fbPannel = new PgFowardBack();
