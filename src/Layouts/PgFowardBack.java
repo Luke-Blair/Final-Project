@@ -15,8 +15,8 @@ public class PgFowardBack extends JPanel {
         setBorder(new LineBorder(new Color(0x636372), 5));
         setLayout(fbLayout);
         setSize(new Dimension(20, 20));
-        JButton back = new JButton("<|pg:n");
-        JButton foward = new JButton("pg:m|>");
+        JButton back = new JButton("Previous");
+        JButton foward = new JButton("Next");
         foward.addActionListener(new PageForwardListener(bookList));
         back.addActionListener(new PageBackwardListener(bookList));
         add(back);
