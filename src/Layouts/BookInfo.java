@@ -11,6 +11,10 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class BookInfo extends JPanel {
+    private JLabel name;
+    private JLabel author;
+    private JLabel genre;
+    private JLabel rating;
     private Book selectedBook;
     public BookInfo(Book selectedBook){
         int columns = 2;
@@ -30,20 +34,28 @@ public class BookInfo extends JPanel {
         SelectedBook selectedBook = SelectedBook.instance();
         Book book = selectedBook.getBook();
 
-        JLabel l1 = new JLabel("Name:" + book.getName());
-        l1.setBorder(new EmptyBorder(20,40,20, 20));
+        name = new JLabel("Name: " + book.getName());
+        name.setBorder(new EmptyBorder(20,40,20, 20));
 
-        JLabel l2 = new JLabel("Author:" + book.getAuthor());
+        author = new JLabel("Author: " + book.getAuthor());
 
-        JLabel l3 = new JLabel("Genre:" + book.getGenre());
-        l3.setBorder(new EmptyBorder(20,40,20, 20));
+        genre = new JLabel("Genre: " + book.getGenre());
+        genre.setBorder(new EmptyBorder(20,40,20, 20));
 
-        JLabel l4 = new JLabel("Rating:" + book.getRating());
+        rating = new JLabel("Rating: " + book.getRating());
 
 
-        add(l1);
-        add(l2);
-        add(l3);
-        add(l4);
+        add(name);
+        add(author);
+        add(genre);
+        add(rating);
+    }
+
+    public void setLabels(SelectedBook book) {
+        Book b = book.getBook();
+        name.setText("Name: " + b.getName());
+        author.setText("Author: " + b.getAuthor());
+        genre.setText("Genre: " + String.valueOf(b.getGenre()));
+        rating.setText("Rating: " + String.valueOf(b.getRating()));
     }
 }

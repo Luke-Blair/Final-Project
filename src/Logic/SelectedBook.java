@@ -3,7 +3,7 @@ package Logic;
 public class SelectedBook {
     private static SelectedBook theInstance;
     private Book book;
-    public static SelectedBook instance() {
+    public static synchronized SelectedBook instance() {
         if(theInstance == null) {
             theInstance = new SelectedBook(new Book.Builder("None")
                     .author("None")
