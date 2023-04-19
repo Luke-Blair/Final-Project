@@ -36,7 +36,7 @@ public class BookList extends JPanel {
                 String buttonString = String.format("Title: %-100s Author: %-100s", title, author);
                 JButton button = new JButton(buttonString);
                 button.setPreferredSize(new Dimension(5, 50));
-                button.addActionListener(new ButtonListener(info, title, author, String.valueOf(book.getGenre()), String.valueOf(book.getRating())));
+                button.addActionListener(new ButtonListener(info, book));
                 add(button);
             }catch(Exception e){
                 add(new JButton());

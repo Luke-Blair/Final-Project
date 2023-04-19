@@ -7,26 +7,16 @@ import java.time.LocalDate;
 import javax.swing.*;
 
 public class ButtonListener implements ActionListener{
-    private String name;
-    private String author;
-    private String genre;
-    private String rating;
     private BookInfo info;
-    public ButtonListener(BookInfo info, String name, String author, String genre, String rating){
-        this.name = name;
-        this.author = author;
-        this.genre = genre;
-        this.rating = rating;
+    private Book book;
+    public ButtonListener(BookInfo info, Book b){
         this.info = info;
+        this.book = b;
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         SelectedBook selectedBook = SelectedBook.instance();
-        selectedBook.setBook(new Book.Builder(name)
-                .author(author)
-                .genre(genre)
-                .rating(Integer.parseInt(rating))
-                .build());
+        selectedBook.setBook(book);
         info.setLabels(selectedBook);
     }
 }
