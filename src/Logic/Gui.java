@@ -42,7 +42,7 @@ public class Gui {
         JPanel parentPanel = new ParentLayout();
 
         //Panel used to display selectedBook's info
-        JPanel infoPanel = new BookInfo(null);
+        JPanel infoPanel = new BookInfo();
 
         //Panel used to hold all selectable books
          JPanel bookPanel = new BookList((BookInfo) infoPanel, 0, 7);

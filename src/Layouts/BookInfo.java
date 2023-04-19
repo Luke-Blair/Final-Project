@@ -15,8 +15,7 @@ public class BookInfo extends JPanel {
     private JLabel author;
     private JLabel genre;
     private JLabel rating;
-    private Book selectedBook;
-    public BookInfo(Book selectedBook){
+    public BookInfo(){
         int columns = 2;
         int rows = 2;
         setPreferredSize(new Dimension(20,100));
