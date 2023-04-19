@@ -17,3 +17,28 @@ Happy Pi Day
 6
 Mystery
 George Math-men
+
+Mario the Movie
+10
+Adventure
+Mario
+
+ScissorMan
+4
+Horror
+Edward von Scissor
+
+Comp Sci 240
+10
+Mystery
+Ian Finlayson
+
+Math for Dummies
+3
+Other
+George Math-men
+
+The Candy Lady
+6
+Adventure
+Ms Sweet

@@ -5,6 +5,9 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import Logic.*;
 
 
@@ -12,8 +15,16 @@ import Logic.*;
 
 public class BookList extends JPanel {
     private BookInfo info;
-    public BookList(BookInfo info){
+    private int start;
+    private int last;
+    private HashMap<ButtonListener, JButton> buttonMap;
+    private ArrayList<JButton> buttons;
+    public BookList(BookInfo info, int start, int last){
 
+        buttonMap = new HashMap<>();
+        buttons = new ArrayList<>();
+        this.start = start;
+        this.last= last;
         this.info = info;
         GridLayout layout = new GridLayout(0, 1);
         setBorder(new LineBorder(new Color(0x636372), 5));
@@ -24,26 +35,71 @@ public class BookList extends JPanel {
         selectedBook.setBorder(new EmptyBorder(20,40,20,20));
         add(selectedBook);
         packSampleButtons();
+        updateButtons(0, 7);
     }
 
     private void packSampleButtons(){
         Library lib = Library.instance();
         for(int i = 0; i < 7; i++ ){
             try {
-                Book book = lib.getList().get(i);
-                String author = book.getAuthor();
-                String title = book.getName();
-                String buttonString = String.format("Title: %-100s Author: %-100s", title, author);
-                JButton button = new JButton(buttonString);
+                JButton button = new JButton("");
+                buttons.add(button);
                 button.setPreferredSize(new Dimension(5, 50));
-                button.addActionListener(new ButtonListener(info, book));
                 add(button);
             }catch(Exception e){
                 add(new JButton());
-
             }
         }
 
+    }
+
+    public void updateButtons(int start, int last) {
+        Library lib = Library.instance();
+        if(last > lib.getList().size()) {
+            last = lib.getList().size();
+        }
+        if(start < 0) {
+            start = 0;
+        }
+
+        // Remove all Action Listeners
+        if(!buttonMap.isEmpty()) {
+            for (ButtonListener listener : buttonMap.keySet()) {
+                JButton button = buttonMap.get(listener);
+                button.setText("");
+                button.removeActionListener(listener);
+            }
+        }
+
+        // Clear map
+        buttonMap.clear();
+
+        // Loop through and add keys and values to map
+        int curButton = 0;
+        for(int i = start; i < last; i++) {
+            Book book = lib.getList().get(i);
+            String author = book.getAuthor();
+            String title = book.getName();
+            String buttonString = String.format("Title: %-100s Author: %-100s", title, author);
+            ButtonListener buttonListener = new ButtonListener(info, book);
+            JButton button = buttons.get(curButton);
+            button.addActionListener(buttonListener);
+            buttonMap.put(buttonListener, button);
+            button.setText(buttonString);
+            curButton++;
+        }
+
+        // Update current start and end values of library
+        this.start = start;
+        this.last = last;
+    }
+
+    public int getStart() {
+        return start;
+    }
+
+    public int getLast() {
+        return last;
     }
 }
 

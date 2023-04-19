@@ -34,15 +34,15 @@ public class BookInfo extends JPanel {
         SelectedBook selectedBook = SelectedBook.instance();
         Book book = selectedBook.getBook();
 
-        name = new JLabel("Name: " + book.getName());
+        name = new JLabel("Name: ");
         name.setBorder(new EmptyBorder(20,40,20, 20));
 
-        author = new JLabel("Author: " + book.getAuthor());
+        author = new JLabel("Author: ");
 
-        genre = new JLabel("Genre: " + book.getGenre());
+        genre = new JLabel("Genre: ");
         genre.setBorder(new EmptyBorder(20,40,20, 20));
 
-        rating = new JLabel("Rating: " + book.getRating());
+        rating = new JLabel("Rating: ");
 
 
         add(name);

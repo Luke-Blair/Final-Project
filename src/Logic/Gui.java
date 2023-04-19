@@ -45,10 +45,10 @@ public class Gui {
         JPanel infoPanel = new BookInfo(null);
 
         //Panel used to hold all selectable books
-         JPanel bookPanel = new BookList((BookInfo) infoPanel);
+         JPanel bookPanel = new BookList((BookInfo) infoPanel, 0, 7);
 
          //Panel used to hold foward back button for pages
-        JPanel fbPannel = new PgFowardBack();
+        JPanel fbPannel = new PgFowardBack((BookList) bookPanel);
 
         //adding child panel to parent panel
         parentPanel.add(infoPanel, BorderLayout.PAGE_START);
