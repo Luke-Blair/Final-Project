@@ -58,9 +58,19 @@ public class BookList extends JPanel {
         if(last > lib.getList().size()) {
             last = lib.getList().size();
         }
+        if(last < 7) {
+            last = 7;
+        }
         if(start < 0) {
             start = 0;
         }
+        if(start > lib.getList().size() - 7) {
+            start = lib.getList().size() - 7;
+        }
+
+        // Update current start and end values of library
+        this.start = start;
+        this.last = last;
 
         // Remove all Action Listeners
         if(!buttonMap.isEmpty()) {
@@ -74,7 +84,7 @@ public class BookList extends JPanel {
         // Clear map
         buttonMap.clear();
 
-        // Loop through and add keys and values to map
+        // Loop through and add keys and values to map, also assigns ButtonListeners to Buttons
         int curButton = 0;
         for(int i = start; i < last; i++) {
             Book book = lib.getList().get(i);
@@ -88,10 +98,6 @@ public class BookList extends JPanel {
             button.setText(buttonString);
             curButton++;
         }
-
-        // Update current start and end values of library
-        this.start = start;
-        this.last = last;
     }
 
     public int getStart() {
