@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Library {
@@ -55,5 +56,38 @@ public class Library {
 
     public ArrayList<Book> getList() {
         return books;
+    }
+
+    public void sortByGenre(Genre genre) {
+        ArrayList<Book> newBooks = new ArrayList<>();
+
+        // Add all books by genre first
+        for(Book b : books) {
+            if(b.getGenre() == genre) {
+                newBooks.add(b);
+                books.remove(b);
+            }
+        }
+
+        // Add the rest
+        for(Book b : books) {
+            newBooks.add(b);
+            books.remove(b);
+        }
+        books = newBooks;
+    }
+
+    public void sortByRating() {
+        for(int i = 0; i < books.size() - 1; i++) {
+            for(int j = 0; j < books.size() - 1 - i; j++) {
+                if(books.get(j).getRating() > books.get(i).getRating()) {
+                    Book temp = books.get(j);
+                    books.remove(j);
+                    books.add(j, books.get(j+1));
+                    books.remove(j+1);
+                    books.add(j+1, temp);
+                }
+            }
+        }
     }
 }
