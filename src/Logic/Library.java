@@ -49,6 +49,7 @@ public class Library {
             System.out.println("File Not Found");
             //e.printStackTrace();
         }
+        Collections.shuffle(books);
     }
 
     /**
@@ -63,7 +64,7 @@ public class Library {
      * Writes to the file the books in the arraylist
      */
     public void saveToFile() {
-        File f = new File("users/" + fileName);
+        File f = new File("IdeaProjects/" + fileName);
         try {
             PrintWriter out = new PrintWriter(f);
             for(Book b : books) {
@@ -84,27 +85,16 @@ public class Library {
     }
 
     /**
-     * Sorts the arraylist by genre and then updates the file
-     * @param genre the specified genre to sort by
+     * Sorts the arraylist by genre
+     * @param genre the specified genre
      */
     public void sortByGenre(Genre genre) {
-        ArrayList<Book> newBooks = new ArrayList<>();
-
-        // Add all books by genre first
-        for(Book b : books) {
+        for(int i = 0; i < books.size(); i++) {
+            Book b = books.get(i);
             if(b.getGenre() == genre) {
-                newBooks.add(b);
-                books.remove(b);
+                books.add(0,books.remove(i));
             }
         }
-
-        // Add the rest
-        for(Book b : books) {
-            newBooks.add(b);
-            books.remove(b);
-        }
-        books = newBooks;
-        saveToFile();
     }
 
     /**
@@ -122,6 +112,5 @@ public class Library {
                 }
             }
         }
-        saveToFile();
     }
 }

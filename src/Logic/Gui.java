@@ -32,13 +32,13 @@ public class Gui {
     }
 
     /**
-     * Constructs a JFrame object inside of the Logic.Gui, the method then loads the
+     * Constructs a JFrame object inside the Logic.Gui, the method then loads the
      * parts required to construct the visual graphics of our project.
      */
     public void build(){
         JFrame frame = new ProjectFrame("Logic.Book-Byte");
 
-        //Panel used to hold all other pannels
+        //Panel used to hold all other panels
         JPanel parentPanel = new ParentLayout();
 
         //Panel used to display selectedBook's info
@@ -47,8 +47,34 @@ public class Gui {
         //Panel used to hold all selectable books
          JPanel bookPanel = new BookList((BookInfo) infoPanel, 0, 7);
 
-         //Panel used to hold foward back button for pages
+         //Panel used to hold forward back button for pages
         JPanel fbPannel = new PgFowardBack((BookList) bookPanel);
+
+        //Creates the Menu Bar that has sort and add
+        JMenuBar menuBar = new JMenuBar();
+        JMenu sort = new JMenu("Sort By");
+
+        JMenuItem adventure = new JMenuItem("Adventure", null);
+        adventure.setToolTipText("Sort by Adventure Books");
+        adventure.addActionListener(new GenreListener("Adventure", (BookList) bookPanel));
+
+        JMenuItem horror = new JMenuItem("Horror", null);
+        horror.setToolTipText("Sort by Horror Books");
+        horror.addActionListener(new GenreListener("Horror", (BookList) bookPanel));
+
+        JMenuItem mystery = new JMenuItem("Mystery",null);
+        mystery.setToolTipText("Sort by Mystery Books");
+        mystery.addActionListener(new GenreListener("Mystery", (BookList) bookPanel));
+
+        JMenuItem other = new JMenuItem("Other",null);
+        other.setToolTipText("Sort by Other Books");
+        other.addActionListener(new GenreListener("Other", (BookList) bookPanel));
+
+        sort.add(adventure);
+        sort.add(horror);
+        sort.add(mystery);
+        sort.add(other);
+        menuBar.add(sort);
 
         //adding child panel to parent panel
         parentPanel.add(infoPanel, BorderLayout.PAGE_START);
@@ -57,6 +83,7 @@ public class Gui {
 
 
         frame.add(parentPanel);
+        frame.setJMenuBar(menuBar);
         frame.pack();
         frame.setSize(1100, 700);
         frame.setVisible(true);
