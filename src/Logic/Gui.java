@@ -12,8 +12,8 @@ public class Gui {
     private static Gui theInstance;
     final int RESULTS_PER_PAGE = 10;
 
-    /**Singleton pattern for Logic.Gui object
-     *
+    /**
+     * Singleton pattern for Logic.Gui object
      * @return theInstance an instance of the Logic.Gui object
      */
     public static synchronized Gui instance(){
@@ -25,8 +25,6 @@ public class Gui {
 
     /**
      * Default constructor for the Logic.Gui object
-     *
-     * @returns Logic.Gui a Logic.Gui object
      */
     private Gui(){
 

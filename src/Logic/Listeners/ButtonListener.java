@@ -6,6 +6,9 @@ import Logic.Library.SelectedBook;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Represents an ActionListener for the buttons that have book information
+ */
 public class ButtonListener implements ActionListener{
     private BookInfo info;
     private Book book;

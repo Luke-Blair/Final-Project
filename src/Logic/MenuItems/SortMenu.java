@@ -6,10 +6,17 @@ import Logic.Listeners.RatingListener;
 
 import javax.swing.*;
 
+/**
+ * Represents the sort sub menus on the menu
+ */
 public class SortMenu extends JMenu{
     private static SortMenu theInstance;
 
-
+    /**
+     * Private Constructor for the sort sub menus
+     * that set up all genres and rating choices
+     * @param bookPanel the panel to sort
+     */
     private SortMenu(JPanel bookPanel){
 
         super("SortBy");
@@ -48,6 +55,11 @@ public class SortMenu extends JMenu{
 
     }
 
+    /**
+     * Singleton Case for the sorting sub menus
+     * @param bookPanel the panel to be updated with the sorting algorithms
+     * @return the 1 sorting sub menu
+     */
     public static synchronized SortMenu instance(JPanel bookPanel){
         if(theInstance == null){
             theInstance =  new SortMenu(bookPanel);
