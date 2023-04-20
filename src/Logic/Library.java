@@ -100,15 +100,23 @@ public class Library {
     /**
      * Sorts the arraylist by rating and then updates the file
      */
-    public void sortByRating() {
-        for(int i = 0; i < books.size() - 1; i++) {
-            for(int j = 0; j < books.size() - 1 - i; j++) {
-                if(books.get(j).getRating() > books.get(i).getRating()) {
-                    Book temp = books.get(j);
-                    books.remove(j);
-                    books.add(j, books.get(j+1));
-                    books.remove(j+1);
-                    books.add(j+1, temp);
+    public void sortByRating(boolean lowToHigh) {
+        if(lowToHigh) {
+            for (int i = 0; i < books.size(); i++) {
+                for (int j = i + 1; j < books.size(); j++) {
+                    if (books.get(j).getRating() < books.get(i).getRating()) {
+                        Book b = books.remove(j);
+                        books.add(i, b);
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < books.size(); i++) {
+                for (int j = i + 1; j < books.size(); j++) {
+                    if (books.get(j).getRating() > books.get(i).getRating()) {
+                        Book b = books.remove(j);
+                        books.add(i, b);
+                    }
                 }
             }
         }

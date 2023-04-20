@@ -70,10 +70,20 @@ public class Gui {
         other.setToolTipText("Sort by Other Books");
         other.addActionListener(new GenreListener("Other", (BookList) bookPanel));
 
+        JMenuItem highRating = new JMenuItem("Rating (Highest)",null);
+        highRating.setToolTipText("Sort by Highest Book Rating");
+        highRating.addActionListener(new RatingListener(false, (BookList) bookPanel));
+
+        JMenuItem lowRating = new JMenuItem("Rating (Lowest)",null);
+        lowRating.setToolTipText("Sort by Lowest Book Rating");
+        lowRating.addActionListener(new RatingListener(true, (BookList) bookPanel));
+
         sort.add(adventure);
         sort.add(horror);
         sort.add(mystery);
         sort.add(other);
+        sort.add(highRating);
+        sort.add(lowRating);
         menuBar.add(sort);
 
         //adding child panel to parent panel
