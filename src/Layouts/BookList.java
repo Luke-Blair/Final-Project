@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import Logic.Library.Book;
-import Logic.Library.Library;
 import Logic.Listeners.ButtonListener;
 
 /**
@@ -72,7 +71,10 @@ public class BookList extends JPanel {
      * @param last the specified end index of the arraylist
      */
     public void updateButtons(int start, int last) {
+
+
         Library lib = Library.instance();
+
         if(last > lib.getList().size()) {
             last = lib.getList().size();
         }
@@ -85,6 +87,7 @@ public class BookList extends JPanel {
         if(start > lib.getList().size() - 7) {
             start = lib.getList().size() - 7;
         }
+
 
         // Update current start and end values of library
         this.start = start;

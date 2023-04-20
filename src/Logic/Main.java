@@ -1,7 +1,5 @@
 package Logic;
 
-import Logic.Library.Library;
-
 import javax.swing.*;
 
 public class Main {
@@ -19,7 +17,7 @@ public class Main {
 
 
         try{
-            library.readFile("src/Books.txt");
+            library.readFile("src/Book.txt");
             //Creates Singleton Logic.Gui
             Gui gui = Gui.instance();
             //Constructs JFrame, then packs with JObjects

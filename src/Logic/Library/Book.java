@@ -29,6 +29,10 @@ public class Book {
             this.name = name;
         }
 
+        public Builder() {
+
+        }
+
         /**
          * Adds the rating to the book
          * @param r the rating

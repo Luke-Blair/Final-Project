@@ -27,7 +27,7 @@ public class AddBookListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JDialog dialog = AddBookDialog.instance();
         System.out.println("Event Detected");
-        dialog.setSize(new Dimension(600,400));
+        dialog.setSize(new Dimension(705,125));
         dialog.setVisible(true);
     }
 }
