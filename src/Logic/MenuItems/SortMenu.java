@@ -2,6 +2,7 @@ package Logic.MenuItems;
 
 import Layouts.BookList;
 import Logic.Listeners.GenreListener;
+import Logic.Listeners.RatingListener;
 
 import javax.swing.*;
 
@@ -29,10 +30,20 @@ public class SortMenu extends JMenu{
         other.setToolTipText("Sort by Other Books");
         other.addActionListener(new GenreListener("Other", (BookList) bookPanel));
 
+        JMenuItem highRating = new JMenuItem("Rating (Highest)",null);
+        highRating.setToolTipText("Sort by Highest Book Rating");
+        highRating.addActionListener(new RatingListener(false, (BookList) bookPanel));
+
+        JMenuItem lowRating = new JMenuItem("Rating (Lowest)",null);
+        lowRating.setToolTipText("Sort by Lowest Book Rating");
+        lowRating.addActionListener(new RatingListener(true, (BookList) bookPanel));
+
         add(adventure);
         add(horror);
         add(mystery);
         add(other);
+        add(lowRating);
+        add(highRating);
 
 
     }
