@@ -43,8 +43,8 @@ The Candy Lady
 Adventure
 Ms Sweet
 
-Byo
-1
+Odd
+10
 Adventure
-db
+Father
 

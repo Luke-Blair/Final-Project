@@ -38,7 +38,7 @@ public class BookList extends JPanel {
         GridLayout layout = new GridLayout(0, 1);
         setBorder(new LineBorder(new Color(0x636372), 5));
         setLayout(layout);
-        Color backgroundColor = new Color(255, 0, 0);
+        Color backgroundColor = new Color(99, 99, 114);
         setBackground(backgroundColor);
         JLabel selectedBook = new JLabel("Please select a book:");
         selectedBook.setBorder(new EmptyBorder(20,40,20,20));
