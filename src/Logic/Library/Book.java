@@ -77,10 +77,10 @@ public class Book {
      * @param builder the builder to create the book object
      */
     private Book(Builder builder){
-        String name = builder.name;
-        int rating = builder.rating;
-        Genre genre = builder.genre;
-        String author = builder.author;
+        this.name = builder.name;
+        this.rating = builder.rating;
+        this.genre = builder.genre;
+        this.author = builder.author;
     }
 
     /**

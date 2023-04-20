@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import Logic.Library.Book;
+import Logic.Library.Library;
 import Logic.Listeners.ButtonListener;
 
 /**

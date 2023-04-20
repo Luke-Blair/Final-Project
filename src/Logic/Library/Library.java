@@ -66,7 +66,7 @@ public class Library {
      * Writes to the file the books in the arraylist
      */
     public void saveToFile() {
-        File f = new File("books/" + fileName);
+        File f = new File("./" + fileName);
         try {
             PrintWriter out = new PrintWriter(f);
             for(Book b : books) {

@@ -1,6 +1,13 @@
 package Logic;
 
+import Logic.Library.Library;
+
 import javax.swing.*;
+
+/**
+ * this method is the main method which sets the look and feel, makes the call to load in the file and to contruct the
+ * GUI
+ */
 
 public class Main {
     public static void main(String[] args){

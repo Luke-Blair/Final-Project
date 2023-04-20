@@ -53,6 +53,8 @@ public class Gui {
         //Creates the Menu Bar that has sort and add
         JMenuBar menuBar = MenuBar.instance(bookPanel);
 
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
 
 
         //adding child panel to parent panel

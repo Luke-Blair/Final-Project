@@ -7,8 +7,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicBorders;
 import java.awt.*;
 
+
+/**
+ * This Class is an extension of the JDialog class, It creates a Dialog class for adding Books
+ * the dialog box contains two JTextFields, and two JComboBoxes
+ */
+
 public class AddBookDialog extends JDialog {
+
     private static AddBookDialog theInstance;
+    private static JLabel confirmation;
 
     private AddBookDialog() {
         JPanel parentPanel = new JPanel();
@@ -48,8 +56,13 @@ public class AddBookDialog extends JDialog {
         textBoxPanel.add(rating);
 
         JButton submit = new JButton("Submit");
+
         submit.addActionListener(SubmitListener.instance(title, author, genre, rating));
         submitPanel.add(submit);
+
+        confirmation = new JLabel("Book had been created!");
+        confirmation.setVisible(false);
+        submitPanel.add(confirmation);
 
 
 
@@ -61,10 +74,17 @@ public class AddBookDialog extends JDialog {
 
     }
 
+    /** singleton constructor
+     */
     public static synchronized AddBookDialog instance() {
         if (theInstance == null) {
             theInstance = new AddBookDialog();
         }
         return theInstance;
+    }
+
+    /** sets confirmation label visability to the boolean value **/
+    public void confirmationVisible(Boolean bool){
+        confirmation.setVisible(bool);
     }
 }
