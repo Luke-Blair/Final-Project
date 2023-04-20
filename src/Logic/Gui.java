@@ -98,12 +98,5 @@ public class Gui {
         frame.setSize(1100, 700);
         frame.setVisible(true);
 
-
     }
-
-
-
-
-
-
 }

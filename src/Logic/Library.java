@@ -49,7 +49,6 @@ public class Library {
             System.out.println("File Not Found");
             //e.printStackTrace();
         }
-        Collections.shuffle(books);
     }
 
     /**
