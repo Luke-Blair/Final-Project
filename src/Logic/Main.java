@@ -1,9 +1,8 @@
 package Logic;
 
-import Logic.Gui;
+import Logic.Library.Library;
 
 import javax.swing.*;
-import javax.swing.plaf.metal.MetalLookAndFeel;
 
 public class Main {
     public static void main(String[] args){

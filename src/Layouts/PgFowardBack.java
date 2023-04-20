@@ -1,7 +1,7 @@
 package Layouts;
 
-import Logic.PageBackwardListener;
-import Logic.PageForwardListener;
+import Logic.Listeners.PageBackwardListener;
+import Logic.Listeners.PageForwardListener;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

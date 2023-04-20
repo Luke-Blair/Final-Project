@@ -1,16 +1,17 @@
 package Logic.MenuItems;
 
 import Layouts.BookList;
-import Logic.GenreListener;
+import Logic.Listeners.GenreListener;
 
 import javax.swing.*;
 
-public class SortMenu extends JMenuBar{
+public class SortMenu extends JMenu{
     private static SortMenu theInstance;
 
 
     private SortMenu(JPanel bookPanel){
-        JMenu sort = new JMenu("Sort By");
+
+        super("SortBy");
 
         JMenuItem adventure = new JMenuItem("Adventure", null);
         adventure.setToolTipText("Sort by Adventure Books");
@@ -28,20 +29,19 @@ public class SortMenu extends JMenuBar{
         other.setToolTipText("Sort by Other Books");
         other.addActionListener(new GenreListener("Other", (BookList) bookPanel));
 
-        sort.add(adventure);
-        sort.add(horror);
-        sort.add(mystery);
-        sort.add(other);
-        add(sort);
+        add(adventure);
+        add(horror);
+        add(mystery);
+        add(other);
+
 
     }
 
     public static synchronized SortMenu instance(JPanel bookPanel){
         if(theInstance == null){
-            return  new SortMenu(bookPanel);
-        }else{
-            return theInstance;
+            theInstance =  new SortMenu(bookPanel);
         }
+            return theInstance;
     }
 
 

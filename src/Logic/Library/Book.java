@@ -1,4 +1,4 @@
-package Logic;
+package Logic.Library;
 
 import java.io.PrintWriter;
 import java.util.Scanner;

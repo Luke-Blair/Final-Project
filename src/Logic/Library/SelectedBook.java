@@ -1,4 +1,4 @@
-package Logic;
+package Logic.Library;
 
 /**
  * Singleton Case that represents 1 book object, that being the one

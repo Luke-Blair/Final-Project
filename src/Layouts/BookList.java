@@ -1,16 +1,15 @@
 package Layouts;
 
 import javax.swing.*;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import Logic.*;
-
-
+import Logic.Library.Book;
+import Logic.Library.Library;
+import Logic.Listeners.ButtonListener;
 
 
 public class BookList extends JPanel {

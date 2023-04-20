@@ -1,11 +1,9 @@
 package Layouts;
 
-import Logic.Book;
-import Logic.Library;
-import Logic.SelectedBook;
+import Logic.Library.Book;
+import Logic.Library.SelectedBook;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;

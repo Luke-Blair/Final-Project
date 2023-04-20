@@ -1,4 +1,4 @@
-package Logic;
+package Logic.Library;
 
 import java.io.File;
 import java.io.FileNotFoundException;

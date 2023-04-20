@@ -1,4 +1,4 @@
-package Logic;
+package Logic.Library;
 
 /**
  * Potential Genre's for a book

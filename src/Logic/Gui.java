@@ -1,6 +1,7 @@
 package Logic;
 
 import Layouts.*;
+import Logic.MenuItems.MenuBar;
 import Logic.MenuItems.SortMenu;
 
 import javax.swing.*;
@@ -37,7 +38,7 @@ public class Gui {
      * parts required to construct the visual graphics of our project.
      */
     public void build(){
-        JFrame frame = new ProjectFrame("Logic.Book-Byte");
+        JFrame frame = new ProjectFrame("Logic.Library.Book-Byte");
 
         //Panel used to hold all other panels
         JPanel parentPanel = new ParentLayout();
@@ -52,7 +53,7 @@ public class Gui {
         JPanel fbPannel = new PgFowardBack((BookList) bookPanel);
 
         //Creates the Menu Bar that has sort and add
-        JMenuBar menuBar = SortMenu.instance(bookPanel);
+        JMenuBar menuBar = MenuBar.instance(bookPanel);
 
 
         //adding child panel to parent panel
