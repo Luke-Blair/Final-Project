@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/**
+ * Represents 1 library of books
+ */
 public class Library {
     private static Library theInstance;
     private String fileName;

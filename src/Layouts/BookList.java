@@ -11,7 +11,9 @@ import Logic.Library.Book;
 import Logic.Library.Library;
 import Logic.Listeners.ButtonListener;
 
-
+/**
+ * Represents the 7 book buttons that hold book information
+ */
 public class BookList extends JPanel {
     private BookInfo info;
     private int start;
@@ -20,7 +22,7 @@ public class BookList extends JPanel {
     private ArrayList<JButton> buttons;
 
     /**
-     * Constructor for a BookList that dispalys book info from a specified start and end point
+     * Constructor for a BookList that displays book info from a specified start and end point
      * in the arraylist of books
      * @param info the panel that reads the book information
      * @param start the first specified index of the arraylist
