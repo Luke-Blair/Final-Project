@@ -55,6 +55,13 @@ public class Gui {
         //Creates the Menu Bar that has sort and add
         JMenuBar menuBar = MenuBar.instance(bookPanel);
 
+        sort.add(adventure);
+        sort.add(horror);
+        sort.add(mystery);
+        sort.add(other);
+        sort.add(highRating);
+        sort.add(lowRating);
+        menuBar.add(sort);
 
         //adding child panel to parent panel
         parentPanel.add(infoPanel, BorderLayout.PAGE_START);
@@ -68,12 +75,5 @@ public class Gui {
         frame.setSize(1100, 700);
         frame.setVisible(true);
 
-
     }
-
-
-
-
-
-
 }
