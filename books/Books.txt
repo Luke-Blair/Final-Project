@@ -1,50 +1,55 @@
-Princess and Frog
-8
-Adventure
-Herbert River
-
-iPhone Manual
-9
-Other
-Mr Phone
-
-Truck Smashers
-4
-Horror
-Frederick Moss
-
-Happy Pi Day
-6
-Mystery
-George Math-men
-
 Mario the Movie
 10
 Adventure
 Mario
-
-ScissorMan
-4
-Horror
-Edward von Scissor
 
 Comp Sci 240
 10
 Mystery
 Ian Finlayson
 
-Math for Dummies
-3
+iPhone Manual
+9
 Other
-George Math-men
+Mr Phone
+
+Princess and Frog
+8
+Adventure
+Herbert River
+
+Flip Man
+6
+Adventure
+Mr Flip
 
 The Candy Lady
 6
 Adventure
 Ms Sweet
 
-Flip Man
+Happy Pi Day
 6
-Adventure
-Mr Flip
+Mystery
+George Math-men
+
+Truck Smashers
+4
+Horror
+Frederick Moss
+
+ScissorMan
+4
+Horror
+Edward von Scissor
+
+Math for Dummies
+3
+Other
+George Math-men
+
+The Door Person
+5
+Mystery
+Edward Dory
 

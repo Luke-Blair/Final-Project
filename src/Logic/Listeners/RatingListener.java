@@ -33,6 +33,10 @@ public class RatingListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Library lib = Library.instance();
         lib.sortByRating(lowToHigh);
-        bookList.updateButtons(0, 7);
+        if(lib.getList().size() < 7) {
+            bookList.updateButtons(0, lib.getList().size());
+        } else {
+            bookList.updateButtons(0, 7);
+        }
     }
 }

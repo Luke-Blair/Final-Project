@@ -32,6 +32,10 @@ public class GenreListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Library lib = Library.instance();
         lib.sortByGenre(Genre.valueOf(genre));
-        bookList.updateButtons(0, 7);
+        if(lib.getList().size() < 7) {
+            bookList.updateButtons(0, lib.getList().size());
+        } else {
+            bookList.updateButtons(0, 7);
+        }
     }
 }

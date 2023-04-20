@@ -44,7 +44,12 @@ public class BookList extends JPanel {
         selectedBook.setBorder(new EmptyBorder(20,40,20,20));
         add(selectedBook);
         packSampleButtons();
-        updateButtons(0, 7);
+        int listSize = Library.instance().getList().size();
+        if(listSize < 7) {
+            updateButtons(0, listSize);
+        } else {
+            updateButtons(0, 7);
+        }
     }
 
     /**
