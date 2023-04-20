@@ -20,8 +20,9 @@ public class Library {
      * establishes the arraylist
      */
     private Library(){
-        fileName = "";
+        fileName = "Books.txt";
         books = new ArrayList<>();
+        readFile(fileName);
     }
 
     /**
@@ -41,7 +42,7 @@ public class Library {
      */
     public void readFile(String fileName) {
         this.fileName = fileName;
-        File f = new File(fileName);
+        File f = new File("books/", fileName);
         try {
             System.out.println(f.getName());
             Scanner in = new Scanner(f);
@@ -50,7 +51,6 @@ public class Library {
             }
         } catch (FileNotFoundException e) {
             System.out.println("File Not Found");
-            //e.printStackTrace();
         }
     }
 
@@ -66,12 +66,13 @@ public class Library {
      * Writes to the file the books in the arraylist
      */
     public void saveToFile() {
-        File f = new File("IdeaProjects/" + fileName);
+        File f = new File("books/" + fileName);
         try {
             PrintWriter out = new PrintWriter(f);
             for(Book b : books) {
                 b.save(out);
             }
+            out.close();
         } catch(FileNotFoundException e) {
             System.out.println("File Not Found");
             e.printStackTrace();
