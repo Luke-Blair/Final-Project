@@ -43,8 +43,13 @@ The Candy Lady
 Adventure
 Ms Sweet
 
-Odd
-10
+Flip Man
+7
 Adventure
-Father
+Mr Flip
+
+
+1
+Adventure
+
 

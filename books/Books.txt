@@ -42,3 +42,9 @@ The Candy Lady
 6
 Adventure
 Ms Sweet
+
+Flip Man
+6
+Adventure
+Mr Flip
+

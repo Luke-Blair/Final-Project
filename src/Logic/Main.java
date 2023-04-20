@@ -24,7 +24,7 @@ public class Main {
 
 
         try{
-            library.readFile("src/Book.txt");
+            library.readFile("books/Books.txt");
             //Creates Singleton Logic.Gui
             Gui gui = Gui.instance();
             //Constructs JFrame, then packs with JObjects
